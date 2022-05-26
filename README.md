@@ -7,10 +7,10 @@ Public pasted spoofer that claims to work on eac be and vgk, but i have not foun
 3. Run loader after restart again to get some other pasted driver to map.
 
 ## Reversal Procedure
-1. Firstly i tried to see how they are loading the efi file and since the process is automatic its using the common method of swapping bootmgfw.efi so it was a easy grab
-2. Then i read in the instructions that i know need to also load a second driver manually and when trying to fetch the vulnerable i saw it being written in temp folder and saw its signed by intel (kdmapper)
-3. then for mapper/driver i noticed they don't even map the driver from the loader itself, they put the mapper and driver in a temp folder, map & delete (extremely poor work)
-4. lastly i was interested in their hwid system and dissapointed again to find out they do run wmic.exe to get the processorid and use that for a hwid lock.
+1. Firstly i tried to see how they are loading the efi file and since the process is automatic its using the common method of swapping bootmgfw.efi so it was a easy grab with a small script i wrote to look for changes in the efi partition
+2. Then i read in the instructions that i know need to also load a second driver manually. so i made a grabber to fetch the vulnerable and i found out it was being written in temp folder and saw its signed by intel (kdmapper)
+3. then for mapper/driver i noticed they don't even map the driver from the loader itself by trying to hook some common kdmapper functions, they put the mapper and driver in a temp folder, map & delete (extremely poor work)
+4. lastly i was interested in their hwid system and dissapointed again to find out they run wmic.exe to get the processorid and use that for a hwid lock.
 
 ![Mapped Driver](./driver_dump.png)
 ![Vulnerable Driver](./vulnerable_dumped.png)
