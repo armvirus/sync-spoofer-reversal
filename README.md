@@ -14,6 +14,5 @@ Public pasted spoofer that claims to work on eac be and vgk, but i have not foun
 
 ![Mapped Driver](./driver_dump.png)
 ![Vulnerable Driver](./vulnerable_dumped.png)
-![Running Processes](./process_dump.png)
 ![Hwid Lock](./hwid_lock.png)
 ![Mapper Dump](./mapper_dump.png)
